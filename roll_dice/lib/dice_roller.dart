@@ -13,8 +13,11 @@ class DiceRoller extends StatefulWidget {
 
 class _DiceRollerState extends State<DiceRoller> {
   var currentRiceDoll = 2;
+
   rollDice() {
-    currentRiceDoll = randomizer.nextInt(6) + 1;
+    setState(() {
+      currentRiceDoll = randomizer.nextInt(6) + 1;
+    });
   }
 
   @override
@@ -22,12 +25,15 @@ class _DiceRollerState extends State<DiceRoller> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset('assets/images/dice-$currentRiceDoll.png'),
+        Image.asset(
+          'assets/images/dice-$currentRiceDoll.png',
+          width: 200,
+        ),
         const SizedBox(
           height: 20,
         ),
         TextButton(
-          onPressed: rollDice(),
+          onPressed: rollDice,
           style: TextButton.styleFrom(
               foregroundColor: Colors.white,
               textStyle: TextStyle(
