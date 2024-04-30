@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:roll_dice/dice_roller.dart';
 
 class MainApp extends StatelessWidget {
-  const MainApp(this.color1, this.color2, {super.key});
+  const MainApp({super.key});
 
-  final Color color1;
-  final Color color2;
 
   @override
   Widget build(context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration:const BoxDecoration(
         gradient: LinearGradient(
-            colors: [color1, color2],
+            colors: [ Color.fromARGB(255, 33, 150, 243),
+          Color.fromARGB(255, 15, 4, 173),],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight),
       ),
