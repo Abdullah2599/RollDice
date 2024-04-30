@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:roll_dice/dice_roller.dart';
 
-class MainApp extends StatelessWidget {
+class MainApp extends StatefulWidget {
   const MainApp({super.key});
-
-
+@override
+  State<MainApp> createState() {
+    return _MainAppState();    
+  }
+}
+class _MainAppState extends State<MainApp>{
+  var activeScreen = 'main-screen';
+ void onClick(){
+setState(() {
+  activeScreen= 'info-screen';
+});     
+ }
   @override
   Widget build(context) {
     return Container(
@@ -15,8 +25,7 @@ class MainApp extends StatelessWidget {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight),
       ),
-      child: const Center(
-        child: DiceRoller(),
+      child: activeScreen== 'main-screen' ? MainTheme()
       ),
     );
   }

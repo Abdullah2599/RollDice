@@ -1,7 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:roll_dice/main_class.dart';
+const  mainapp= MainApp();
 final randomizer = Random();
 
 class DiceRoller extends StatefulWidget {
@@ -48,7 +49,30 @@ class _DiceRollerState extends State<DiceRoller> {
             ),
           ),
         ),
+        OutlinedButton.icon(onPressed: Info(), icon: icon, label: label);
       ],
+      
     );
   }
 }
+
+class Info extends StatefulWidget{
+  const Info({super.key});
+  @override
+  State<Info> createState() {
+         return _InfoState(); 
+  }
+}
+class _InfoState extends State<Info>{
+
+
+
+  @override
+  Widget build(BuildContext context) {
+      return SizedBox(
+        child: ,
+      );
+   
+  }
+}
+
